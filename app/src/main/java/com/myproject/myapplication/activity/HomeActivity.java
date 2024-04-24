@@ -1,6 +1,8 @@
 package com.myproject.myapplication.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,5 +23,9 @@ public class HomeActivity extends AppCompatActivity {
 
         userName = findViewById(R.id.userName);
         userName.setText("******");
+    }
+
+    public void countStepsButton(View view) {
+        startActivity(new Intent(this, StepsActivity.class));
     }
 }

@@ -30,6 +30,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/welcome"/>
+
+    <Button
+        android:id="@+id/buttonCountSteps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft ="80dp"
+        android:paddingRight="80dp"
+        android:textSize ="20sp"
+        android:text ="Count Steps"
+        android:padding="12dp"
+        android:layout_marginTop="10dp"
+        app:cornerRadius = "15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userName"
+        android:backgroundTint="#448e7a"
+        android:onClick ="countStepsButton"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,5 +61,5 @@
         android:backgroundTint="#448e7a"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userName"/>
+        app:layout_constraintTop_toBottomOf="@id/buttonCountSteps"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

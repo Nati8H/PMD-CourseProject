@@ -13,30 +13,32 @@ import androidx.core.view.WindowInsetsCompat;
 import com.myproject.myapplication.R;
 import com.myproject.myapplication.utils.SessionManager;
 
-public class HomeActivity extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity {
 
     TextView userName;
+    TextView email;
     SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_settings);
+
         try {
             sessionManager = new SessionManager(getApplicationContext());
         }
         catch (Exception e){
             e.printStackTrace();
         }
-        userName = findViewById(R.id.userName);
+
+        userName = findViewById(R.id.txtUsername);
         userName.setText(sessionManager.getUsername());
+
+        email = findViewById(R.id.txtEmail);
+        email.setText(sessionManager.getEmail());
     }
 
-    public void countStepsButton(View view) {
-        startActivity(new Intent(this, StepsActivity.class));
-    }
-
-    public void accountSettingsButton(View view) {
-        startActivity(new Intent(this, SettingsActivity.class));
+    public void returnToHomeButton(View view) {
+        startActivity(new Intent(this, HomeActivity.class));
     }
 }

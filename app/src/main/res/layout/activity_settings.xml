@@ -60,6 +60,7 @@
                     android:textColor="@color/white"
                     android:textSize="20dp"
                     android:textStyle="bold"
+                    android:onClick="changeUsernameBtn"
                     app:drawableEndCompat="@drawable/ic_edit"
                     app:drawableTint="@color/white" />
             </LinearLayout>
@@ -142,7 +143,8 @@
                             android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
                             android:src="@drawable/baseline_arrow_forward_ios_24"
-                            app:tint="#707070" />
+                            android:onClick="changeEmailBtn"
+                            app:tint="@color/green" />
                     </RelativeLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -181,6 +183,7 @@
                             android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
                             android:src="@drawable/baseline_arrow_forward_ios_24"
+                            android:onClick="changePasswordBtn"
                             app:tint="@color/green" />
                     </RelativeLayout>
 
@@ -220,6 +223,7 @@
                             android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
                             android:src="@drawable/baseline_arrow_forward_ios_24"
+                            android:onClick="logout"
                             app:tint="@color/green" />
                     </RelativeLayout>
 

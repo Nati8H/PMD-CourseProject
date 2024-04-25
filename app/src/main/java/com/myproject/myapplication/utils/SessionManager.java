@@ -25,6 +25,21 @@ public class SessionManager {
         editor.apply();
     }
 
+    public void changeUsername(String username) {
+        editor.putString(KEY_USERNAME, username);
+        editor.apply();
+    }
+
+    public void changeEmail(String email) {
+        editor.putString(KEY_EMAIL, email);
+        editor.apply();
+    }
+
+    public void changePassword(String password) {
+        editor.putString(KEY_PASSWORD, password);
+        editor.apply();
+    }
+
     public boolean isLoggedIn() {
         return pref.getInt(KEY_USER_ID, -1) != -1;
     }

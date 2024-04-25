@@ -55,6 +55,33 @@ public class DBManager {
         }
     }
 
+    public void changeUsername(int id, String username){
+        try {
+            String update = "UPDATE moveit.users SET username='" + username + "' WHERE id=" + id + ";";
+            statement.execute(update);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void changeEmail(int id, String email){
+        try {
+            String update = "UPDATE moveit.users SET email=" + email + " WHERE id=" + id + ";";
+            statement.execute(update);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void changePassword(int id, String password){
+        try {
+            String update = "UPDATE moveit.users SET password=" + password + " WHERE id=" + id + ";";
+            statement.execute(update);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public List<User> getAllUsers() {
         List<User> users = new ArrayList<>();
         String select = "SELECT * FROM users;";

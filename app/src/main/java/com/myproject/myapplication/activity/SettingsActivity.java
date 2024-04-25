@@ -6,9 +6,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.myproject.myapplication.R;
 import com.myproject.myapplication.utils.SessionManager;
@@ -40,5 +37,22 @@ public class SettingsActivity extends AppCompatActivity {
 
     public void returnToHomeButton(View view) {
         startActivity(new Intent(this, HomeActivity.class));
+    }
+
+    public void changeUsernameBtn(View view) {
+        startActivity(new Intent(this, ChangeUsernameActivity.class));
+    }
+
+    public void changeEmailBtn(View view) {
+        startActivity(new Intent(this, ChangeEmailActivity.class));
+    }
+
+    public void changePasswordBtn(View view) {
+        startActivity(new Intent(this, ChangePasswordActivity.class));
+    }
+
+    public void logout(View view) {
+        sessionManager.logoutUser();
+        startActivity(new Intent(this, MainActivity.class));
     }
 }

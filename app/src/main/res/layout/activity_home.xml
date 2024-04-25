@@ -1,83 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pagebkg"
-    tools:context=".activity.MainActivity">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome"
-        android:id="@+id/welcome"
-        android:layout_marginTop="250dp"
-        android:textColor="#448e7a"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/userName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="name"
-        android:id="@+id/userName"
-        android:textColor="#448e7a"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/welcome"/>
+    android:orientation="vertical"
+    android:weightSum="2"
+    tools:context=".activity.HomeActivity">
 
-    <Button
-        android:id="@+id/buttonCountSteps"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:paddingLeft ="80dp"
-        android:paddingRight="80dp"
-        android:textSize ="20sp"
-        android:text ="Count Steps"
-        android:padding="12dp"
-        android:layout_marginTop="10dp"
-        app:cornerRadius = "15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userName"
-        android:backgroundTint="#448e7a"
-        android:onClick ="countStepsButton"/>
+    <io.github.florent37.shapeofview.shapes.ArcView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:elevation="40dp"
+        app:shape_arc_height="40dp"
+        app:shape_arc_position="bottom">
 
-    <Button
-        android:id="@+id/accountSettings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:paddingLeft ="80dp"
-        android:paddingRight="80dp"
-        android:textSize ="20sp"
-        android:text ="Settings"
-        android:padding="12dp"
-        android:layout_marginTop="10dp"
-        app:cornerRadius = "15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonCountSteps"
-        android:backgroundTint="#448e7a"
-        android:onClick ="accountSettingsButton"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/green">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Log Out"
-        android:id="@+id/logout"
-        android:textSize="20sp"
-        android:padding="12dp"
-        android:layout_marginTop="10dp"
-        app:cornerRadius = "15dp"
-        android:backgroundTint="#448e7a"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/accountSettings"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.coordinatorlayout.widget.CoordinatorLayout
+                    android:layout_width="90dp"
+                    android:layout_height="90dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imgProfile"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/baseline_account_circle_24" />
+
+                </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:drawablePadding="10dp"
+                    android:text="Welcome"
+                    android:id="@+id/userName"
+                    android:textColor="@color/white"
+                    android:textSize="26sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </io.github.florent37.shapeofview.shapes.ArcView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.4"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardCountSteps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    app:cardElevation="6dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingStart="10dp"
+                        android:paddingTop="25dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="25dp">
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="10dp"
+                            android:text="Count steps"
+                            android:textColor="#707070"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            app:drawableStartCompat="@drawable/baseline_snowshoeing_24"
+                            app:drawableTint="@color/green" />
+
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/baseline_arrow_forward_ios_24"
+                            android:onClick="countStepsButton"
+                            app:tint="@color/green" />
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardSettings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    app:cardElevation="6dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingStart="10dp"
+                        android:paddingTop="25dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="25dp">
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="10dp"
+                            android:text="Account settings"
+                            android:textColor="#707070"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            app:drawableStartCompat="@drawable/baseline_settings_green_24"
+                            app:drawableTint="@color/green" />
+
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/baseline_arrow_forward_ios_24"
+                            android:onClick="accountSettingsButton"
+                            app:tint="@color/green" />
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

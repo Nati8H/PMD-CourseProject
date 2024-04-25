@@ -1,6 +1,7 @@
 package com.myproject.myapplication;
 
 import com.myproject.myapplication.model.User;
+import com.myproject.myapplication.utils.AESCrypt;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,7 +13,7 @@ import java.util.List;
 
 public class DBManager {
 
-    private String url = "jdbc:mysql://192.168.1.8:3306/moveit";
+    private String url = "jdbc:mysql://192.168.235.243:3306/moveit";
     private String user = "root";
     private String pass = "Natal1_Pa55";
     private Statement statement;
@@ -47,8 +48,9 @@ public class DBManager {
 
     public void addUser(String username,String email, String password) {
         try {
+            String encryptedPassword = AESCrypt.encrypt(password);
             String insert = "INSERT INTO `users`(`username`,`email`,`password`) VALUES ('"+
-                    username +"','"+email+"','"+password+"');";
+                    username +"','"+email+"','"+encryptedPassword+"');";
             statement.execute(insert);
         } catch (Exception e) {
             e.printStackTrace();

@@ -47,7 +47,7 @@ public class StepsActivity extends AppCompatActivity implements SensorEventListe
         super.onResume();
         
         if (stepSensor == null){
-            Toast.makeText(this, "This device has no sensor!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Това устройство няма сензор!", Toast.LENGTH_SHORT).show();
         }
         else{
             sensorManager.registerListener(this, stepSensor, SensorManager.SENSOR_DELAY_NORMAL);
@@ -74,7 +74,7 @@ public class StepsActivity extends AppCompatActivity implements SensorEventListe
         steps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(StepsActivity.this, "Long press to reset steps", Toast.LENGTH_SHORT).show();
+                Toast.makeText(StepsActivity.this, "Натиснете и задръжте, за да нулирате крачките.", Toast.LENGTH_SHORT).show();
             }
         });
 

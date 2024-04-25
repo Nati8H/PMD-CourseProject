@@ -38,7 +38,7 @@ public class SignUpActivity extends AppCompatActivity {
                        password.getText().toString());
             startActivity(new Intent(this, LoginActivity.class));
         }else{
-            Toast t = Toast.makeText(this, "Enter your data correctly!", Toast.LENGTH_SHORT);
+            Toast t = Toast.makeText(this, "Въведи валидни данни!", Toast.LENGTH_SHORT);
             t.show();
 
         }
@@ -49,17 +49,17 @@ public class SignUpActivity extends AppCompatActivity {
         boolean validData = true;
 
         if (isEmpty(username)) {
-            username.setError("Username is required!");
+            username.setError("Потребителското име е задължително!");
             validData = false;
         }
 
         if (isEmpty(password)) {
-            password.setError("Password is required!");
+            password.setError("Паролата е задължителна!");
             validData = false;
         }
 
         if (isEmpty(email)) {
-            email.setError("Email is required!");
+            email.setError("Имейлът е задължителен!");
             validData = false;
         }
 

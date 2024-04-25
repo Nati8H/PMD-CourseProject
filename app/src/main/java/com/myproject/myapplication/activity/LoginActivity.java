@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.myproject.myapplication.DBManager;
 import com.myproject.myapplication.R;
 import com.myproject.myapplication.model.User;
+import com.myproject.myapplication.utils.AESCrypt;
 import com.myproject.myapplication.utils.SessionManager;
 
 import java.util.List;
@@ -43,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         User currentUser = getCurrentUser(currentEmail,currentPassword);
 
         if(currentUser==null){
-            Toast.makeText(this, "Username or Password is incorrect", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Потребителското име или паролата са грешни!", Toast.LENGTH_SHORT).show();
         }else {
             sessionManager.loginUser(currentUser.getId(), currentUser.getUsername(), currentUser.getEmail(), currentUser.getPassword());
             startActivity(new Intent(this, HomeActivity.class));
@@ -58,11 +59,18 @@ public class LoginActivity extends AppCompatActivity {
         db = new DBManager();
         List<User> users = db.getAllUsers();
 
-        for (User user:users){
-            if (user.getEmail().equals(email)&& user.getPassword().equals(password)){
-                return user;
+        try {
+            for (User user:users){
+                String decryptedPassword = AESCrypt.decrypt(user.getPassword());
+                if (user.getEmail().equals(email)&& decryptedPassword.equals(password)){
+                    return user;
+                }
             }
         }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
 
         return null;
     }

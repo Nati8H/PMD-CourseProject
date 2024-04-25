@@ -44,7 +44,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email"
+                android:hint="Имейл"
                 app:hintAnimationEnabled="false"
                 app:hintTextColor="#707070"
                 app:startIconDrawable="@drawable/baseline_alternate_email_24"
@@ -62,7 +62,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Update"
+                android:text="Обнови"
                 android:id="@+id/btnUpdateEmail"
                 android:textSize="18sp"
                 android:layout_marginTop="30dp"

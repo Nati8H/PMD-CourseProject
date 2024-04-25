@@ -29,7 +29,7 @@ public class HomeActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         userName = findViewById(R.id.userName);
-        userName.setText(String.format("Welcome, %s!", sessionManager.getUsername()));
+        userName.setText(String.format("Добре дошъл/ла, %s!", sessionManager.getUsername()));
     }
 
     public void countStepsButton(View view) {

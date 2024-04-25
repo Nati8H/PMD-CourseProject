@@ -26,6 +26,10 @@ public class SignUpActivity extends AppCompatActivity {
         password = findViewById(R.id.signup_password);
     }
 
+    public void goToLogin(View view){
+        startActivity(new Intent(this, LoginActivity.class));
+    }
+
     public void registerUser(View view){
         if(validateData()){
             DBManager db = new DBManager();
@@ -59,21 +63,11 @@ public class SignUpActivity extends AppCompatActivity {
             validData = false;
         }
 
-//        if (isEmail(email)) {
-//            email.setError("Email is not valid!");
-//            validData = false;
-//        }
-
         return validData;
     }
 
     private boolean isEmpty(EditText text) {
         CharSequence str = text.getText().toString();
         return TextUtils.isEmpty(str);
-    }
-
-    private boolean isEmail(EditText text) {
-        CharSequence email = text.getText().toString();
-        return (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches());
     }
 }

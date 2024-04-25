@@ -28,7 +28,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Login"
+                android:text="Вход"
                 android:id="@+id/loginText"
                 android:textSize="36sp"
                 android:textAlignment="center"
@@ -42,7 +42,7 @@
                 android:background="@drawable/custom_edittext"
                 android:layout_marginTop="40dp"
                 android:padding="8dp"
-                android:hint="Email"
+                android:hint="Имейл"
                 android:drawableLeft="@drawable/baseline_alternate_email_24"
                 android:textColor="@color/black"
                 android:drawablePadding="8dp"/>
@@ -55,7 +55,7 @@
                 android:layout_marginTop="20dp"
                 android:inputType="textPassword"
                 android:padding="8dp"
-                android:hint="Password"
+                android:hint="Парола"
                 android:drawableLeft="@drawable/baseline_lock_24"
                 android:textColor="@color/black"
                 android:drawablePadding="8dp"/>
@@ -63,7 +63,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Login"
+                android:text="Вход"
                 android:id="@+id/login_button"
                 android:textSize="18sp"
                 android:layout_marginTop="30dp"
@@ -78,7 +78,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:padding="8dp"
-                android:text="Forgot Password?"
+                android:text="Забравена парола?"
                 android:textColor="#448e7a"
                 android:textSize="16sp" />
 
@@ -89,10 +89,11 @@
                 android:layout_marginTop="20dp"
                 android:padding="8dp"
                 android:layout_gravity="center"
-                android:text="Not yet registered? Sign Up"
+                android:text="Нямаш регистрация? Регистрирай се"
                 android:textAlignment="center"
                 android:textColor="#448e7a"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:onClick="goToRegister"/>
 
         </LinearLayout>
 

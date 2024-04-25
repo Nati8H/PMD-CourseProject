@@ -50,6 +50,10 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    public void goToRegister(View view){
+        startActivity(new Intent(this, SignUpActivity.class));
+    }
+
     private User getCurrentUser(String email,String password){
         db = new DBManager();
         List<User> users = db.getAllUsers();
